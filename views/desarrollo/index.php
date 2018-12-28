@@ -10,7 +10,7 @@
 <?php
 //include '../vendor/afipsdk/afip.php/src/Afip.php'; 
 $data = array(
-	'CantReg' 		=> 2, // Cantidad de comprobantes a registrar
+	'CantReg' 		=> 1, // Cantidad de comprobantes a registrar
 	'PtoVta' 		=> 1, // Punto de venta
 	'CbteTipo' 		=> 6, // Tipo de comprobante (ver tipos disponibles) 
 	'Concepto' 		=> 1, // Concepto del Comprobante: (1)Productos, (2)Servicios, (3)Productos y Servicios
@@ -38,7 +38,6 @@ $data = array(
 			'Cuit' 		=> 23307295059 // (Opcional) Cuit del emisor del comprobante
 			)
 		),
-	/*
 	'Tributos' 		=> array( // (Opcional) Tributos asociados al comprobante
 		array(
 			'Id' 		=>  99, // Id del tipo de tributo (ver tipos disponibles) 
@@ -47,8 +46,7 @@ $data = array(
 			'Alic' 		=> 0, // Alícuota
 			'Importe' 	=> 0 // Importe del tributo
 		)
-	),
-	*/
+	), 
 	'Iva' 			=> array( // (Opcional) Alícuotas asociadas al comprobante
 		array(
 			'Id' 		=> 5, // Id del tipo de IVA (ver tipos disponibles) 
@@ -56,7 +54,6 @@ $data = array(
 			'Importe' 	=> 21 // Importe 
 		)
 	), 
-	/*
 	'Opcionales' 	=> array( // (Opcional) Campos auxiliares
 		array(
 			'Id' 		=> 17, // Codigo de tipo de opcion (ver tipos disponibles) 
@@ -66,61 +63,38 @@ $data = array(
 	'Compradores' 	=> array( // (Opcional) Detalles de los clientes del comprobante 
 		array(
 			'DocTipo' 		=> 80, // Tipo de documento (ver tipos disponibles) 
-			'DocNro' 		=> 23307295059, // Numero de documento
+			'DocNro' 		=> 30729505, // Numero de documento
 			'Porcentaje' 	=> 100 // Porcentaje de titularidad del comprador
 		)
 	)
-	*/
-	
 );
 /****************************************/
 $afip = new Afip(array('CUIT' => 23307295059));
 
-$voucher_info = $afip->ElectronicBilling->GetVoucherInfo(6,1,6); //Devuelve la información del comprobante 1 para el punto de venta 1 y el tipo de comprobante 6 (Factura B)
 
-if($voucher_info === NULL){
-    echo 'El comprobante no existe';
-    $res = $afip->ElectronicBilling->CreateNextVoucher($data);
 
-	echo $res['CAE']; //CAE asignado el comprobante
-echo '</br>'.$res['CAEFchVto']; //Fecha de vencimiento del CAE (yyyy-mm-dd)
-echo '</br>'.$res['voucher_number']; //Número asignado al comprobante
-
-}
-else{
-    echo 'Esta es la información del comprobante:';
-    echo '<pre>';
-    print_r($voucher_info);
-    echo '</pre>';
-}
-
-/*
-$res = $afip->ElectronicBilling->CreateNextVoucher($data);
-
-echo $res['CAE']; //CAE asignado el comprobante
-echo '</br>'.$res['CAEFchVto']; //Fecha de vencimiento del CAE (yyyy-mm-dd)
-echo '</br>'.$res['voucher_number']; //Número asignado al comprobante
 
 
 $voucher_types = $afip->ElectronicBilling->GetVoucherTypes();
-echo 'Obtener tipos de comprobantes disponibles</br><pre>';
-//echo'</pre>';
+echo 'Obtener tipos de comprobantes disponibles<br><pre>';
+print_r($voucher_types);
+echo'</pre>';
 
 $concept_types = $afip->ElectronicBilling->GetConceptTypes();//conceptos disponibles
 
-  echo 'Obtener tipos de conceptos disponibles</br><pre>';
- // print_r($concept_types);
-  echo '</pre>';
+  echo 'Obtener tipos de conceptos disponibles<br><pre>';
+  print_r($concept_types);
+  echo '<pre>';
 
  $aloquot_types = $afip->ElectronicBilling->GetAliquotTypes();
    echo '<pre>';
   print_r($aloquot_types);
-  echo '</pre>';
+  echo '<pre>';
 
   $option_types = $afip->ElectronicBilling->GetOptionsTypes();
   echo '<pre>';
   print_r($option_types);
-  echo '</pre>';
+  echo '<pre>';
   
   
   $server_status = $afip->ElectronicBilling->GetServerStatus();
@@ -131,15 +105,15 @@ print_r($server_status);
 echo '</pre>';
 
 $last_voucher = $afip->ElectronicBilling->GetLastVoucher(1,6);
-echo '<pre> Este es el numero del ultimo comprobante';
+echo '<pre>';
 print_r($last_voucher);
-echo'</pre></br>';
-  */
+echo'</pre<';
+  
 /************************************/
 $res="vacio";
 //$res=$afip->ElectronicBilling->CreateVoucher($data);
 echo '<pre>';
-	//print_r($res);
+	print_r($res);
 echo '</pre>';
 
   ?>
