@@ -63,7 +63,17 @@ $factura_b = array(
 			'Cuit' 		=> 23307295059 // (Opcional) Cuit del emisor del comprobante
 			)
 		),
-	
+	/*
+	'Tributos' 		=> array( // (Opcional) Tributos asociados al comprobante
+		array(
+			'Id' 		=>  99, // Id del tipo de tributo (ver tipos disponibles) 
+			'Desc' 		=> 'Ingresos Brutos', // (Opcional) Descripcion
+			'BaseImp' 	=> 100, // Base imponible para el tributo
+			'Alic' 		=> 0, // Alícuota
+			'Importe' 	=> 0 // Importe del tributo
+		)
+	),
+	*/
 	'Iva' 			=> array( // (Opcional) Alícuotas asociadas al comprobante
 		array(
 			'Id' 		=> 5, // Id del tipo de IVA (ver tipos disponibles) 
@@ -71,7 +81,21 @@ $factura_b = array(
 			'Importe' 	=> 21 // Importe 
 		)
 	), 
-	
+	/*
+	'Opcionales' 	=> array( // (Opcional) Campos auxiliares
+		array(
+			'Id' 		=> 17, // Codigo de tipo de opcion (ver tipos disponibles) 
+			'Valor' 	=> 2 // Valor 
+		)
+	), 
+	'Compradores' 	=> array( // (Opcional) Detalles de los clientes del comprobante 
+		array(
+			'DocTipo' 		=> 80, // Tipo de documento (ver tipos disponibles) 
+			'DocNro' 		=> 23307295059, // Numero de documento
+			'Porcentaje' 	=> 100 // Porcentaje de titularidad del comprador
+		)
+	)
+	*/
 	
 );
 /****************************************/

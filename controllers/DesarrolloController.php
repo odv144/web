@@ -11,6 +11,7 @@ use app\models\ContactForm;
 use app\models\Validarformulario;
 use app\models\ValidarformularioAjax;
 use yii\widgets\ActiveForm;
+use app\models\Factura; 
 
 
 class DesarrolloController extends Controller
@@ -66,8 +67,8 @@ class DesarrolloController extends Controller
      public function actionIndex()
     {
        
-      // $afip = new Afip(array('CUIT' => 23307295059));
-        return $this->render('index');
+        $model = new Factura;
+        return $this->render('index',['model'=>$model]);
     }
     /******************************************************************/
    
