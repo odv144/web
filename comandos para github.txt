@@ -1,0 +1,14 @@
+comandos para github
+en la carpeta del proyecto primero
+git init
+luego para ver el estado
+git status
+
+para agragar al temporarl
+git add .
+
+preparar el packete con el commit
+git commit -m "mensaje descriptivo"
+
+para subir al servidor
+git push 
