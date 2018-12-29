@@ -39,9 +39,21 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Desarrollo', 'url' => ['/desarrollo/index']],
+            ['label' =>'Desarrollo', 'url' => ['/desarrollo/index'],
+                'items'=>[
+                    ['label'=>'Factura A','url'=>['desarrollo/facturaa']],
+                    ['label'=>'Factura B','url'=>['desarrollo/facturab']],
+                    ['label'=>'Recibo A','url'=>['desarrollo/reciboa']],
+                    ['label'=>'Clientes','url'=>['desarrollo/clientes']],
+                    ['label'=>'Productos','url'=>['desarrollo/productos']],
+                    ],
+            ],
+
             ['label' => 'About', 'url' => ['/site/about']],
-            
+
+    //        ['url'=>'home', 'label'=>'Home'],
+//                Html::dropDown('rol', $actualRole, $roleList),
+  //              Html::inputText('q', '', ['placeholder'=>'search for....']),
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
