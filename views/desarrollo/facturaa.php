@@ -26,7 +26,7 @@ echo '</br>'.$res['voucher_number']; //Número asignado al comprobante
 
 }
 else{
-    echo 'Esta es la información del comprobante:';
+    echo 'Esta es la información del comprobante: Generico pero estoy en la seccion de Factura A';
     echo '<pre>';
     print_r($voucher_info);
     echo '</pre>';

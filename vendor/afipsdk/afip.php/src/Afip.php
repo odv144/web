@@ -76,6 +76,7 @@ class Afip {
 	 * @var array[string]
 	 **/
 	var $implemented_ws = array(
+		'FacturacionDetalle',
 		'ElectronicBilling',
 		'RegisterScopeFour',
 		'RegisterScopeFive',

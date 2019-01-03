@@ -71,6 +71,30 @@ class DesarrolloController extends Controller
         return $this->render('index',['model'=>$model]);
     }
     /******************************************************************/
+      public function actionFacturaa()
+    {
+       
+        $model = new Factura;
+        return $this->render('facturaa',['model'=>$model]);
+    }
+    /******************************************************************/
+     public function actionFacturab()
+    {
+       
+        $model = new Factura;
+        return $this->render('facturab',['model'=>$model]);
+    }
+    /******************************************************************/
+      public function actionReciboa()
+    {
+       
+        $model = new Factura;
+        return $this->render('reciboa',['model'=>$model]);
+    }
+    /******************************************************************/
+  
+    
+    /******************************************************************/
    
     public function actionSaludo()
     {

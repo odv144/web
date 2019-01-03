@@ -41,11 +41,19 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' =>'Desarrollo', 'url' => ['/desarrollo/index'],
                 'items'=>[
-                    ['label'=>'Factura A','url'=>['desarrollo/facturaa']],
-                    ['label'=>'Factura B','url'=>['desarrollo/facturab']],
-                    ['label'=>'Recibo A','url'=>['desarrollo/reciboa']],
-                    ['label'=>'Clientes','url'=>['desarrollo/clientes']],
-                    ['label'=>'Productos','url'=>['desarrollo/productos']],
+                    ['label'=>'Factura A','url'=>['/desarrollo/facturaa']],
+                    ['label'=>'Factura B','url'=>['/desarrollo/facturab']],
+                    ['label'=>'Recibo A','url'=>['/desarrollo/reciboa']],
+                    ],
+            ],
+            ['label' =>'Clientes', 'url' => ['/clientes/index'],
+                'items'=>[
+                    ['label'=>'Nuevo','url'=>['/clientes/nuevo']],
+                    ],
+            ],
+             ['label' =>'Productos', 'url' => ['/productos/index'],
+                'items'=>[
+                    ['label'=>'Nuevo','url'=>['/productos/nuevo']],
                     ],
             ],
 
