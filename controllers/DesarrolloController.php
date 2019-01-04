@@ -92,7 +92,12 @@ class DesarrolloController extends Controller
         return $this->render('reciboa',['model'=>$model]);
     }
     /******************************************************************/
-  
+      public function actionNuevo()
+    {
+       
+       
+        return $this->render('nuevo');
+    }
     
     /******************************************************************/
    
