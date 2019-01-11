@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=centro',
-    'username' => 'odv144',
-    'password' => 'odv144',
+    'dsn' => 'mysql:host=localhost;dbname=webcomercial',
+    'username' => 'root',
+    'password' => '',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
